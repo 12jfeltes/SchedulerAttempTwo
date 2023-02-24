@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://x142l4ln301y"]
+
+[ext_resource type="Script" path="res://ScreenNodes/CalendarNodes/ShiftTextButton.gd" id="2_wmukm"]
+
+[node name="ShiftTextButton" type="Button" groups=["TextButtons"]]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "Blank Text"
+alignment = 0
+script = ExtResource("2_wmukm")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

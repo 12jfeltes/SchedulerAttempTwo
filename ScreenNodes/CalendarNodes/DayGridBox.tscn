@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh8gde4u5qu3"]
+
+[ext_resource type="Script" path="res://ScreenNodes/CalendarNodes/DayGridBox.gd" id="1"]
+
+[node name="DayGridBox" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_bottom = -450.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+
+[node name="DateText" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 2
+text = "DEFAULT TEXT BOX"
+scroll_active = false
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Date" type="Button" parent="Scroll/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_disabled_color = Color(0.819608, 0.819608, 0.819608, 1)
+disabled = true
+text = "n/a"
+flat = true
+alignment = 0

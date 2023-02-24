@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://t0m2goc7l8i0"]
+
+[ext_resource type="Script" path="res://ScreenNodes/CalendarNodes/top_bar_calendar.gd" id="1_mvcqq"]
+[ext_resource type="PackedScene" uid="uid://cjby84hflawuh" path="res://ScreenNodes/CalendarNodes/Buttons/show_poss_swaps.tscn" id="1_ospxb"]
+[ext_resource type="PackedScene" path="res://ScreenNodes/CalendarNodes/Buttons/back_button.tscn" id="3_qo6em"]
+
+[node name="TopBarCalendar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mvcqq")
+
+[node name="M" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Back" type="ColorRect" parent="M"]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.0352941, 0.0352941, 0.0352941, 1)
+
+[node name="HToolbar" type="HBoxContainer" parent="M"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 2
+
+[node name="ShowPossSwaps" parent="M/HToolbar" instance=ExtResource("1_ospxb")]
+layout_mode = 2
+mouse_filter = 1
+expand_icon = true
+
+[node name="MarginContainer" type="MarginContainer" parent="M/HToolbar"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="BackButton" parent="M/HToolbar" instance=ExtResource("3_qo6em")]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="M/HToolbar"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="C" type="CenterContainer" parent="M"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="H2" type="HBoxContainer" parent="M/C"]
+layout_mode = 2
+
+[node name="LeftButton" type="Button" parent="M/C/H2"]
+layout_mode = 2
+mouse_filter = 1
+text = "<-"
+
+[node name="Label" type="Label" parent="M/C/H2"]
+layout_mode = 2
+text = "  MONTH  "
+horizontal_alignment = 1
+
+[node name="RightButton2" type="Button" parent="M/C/H2"]
+layout_mode = 2
+mouse_filter = 1
+text = "->"
+
+[connection signal="pressed" from="M/C/H2/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="M/C/H2/RightButton2" to="." method="_on_right_button_2_pressed"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjby84hflawuh"]
+
+[ext_resource type="Script" path="res://ScreenNodes/CalendarNodes/Buttons/show_poss_swaps.gd" id="1_ijufs"]
+
+[node name="ShowPossSwaps" type="Button"]
+text = "SHOW AVAILABLE TRADES"
+script = ExtResource("1_ijufs")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

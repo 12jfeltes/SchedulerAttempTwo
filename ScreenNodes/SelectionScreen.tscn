@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=3 uid="uid://e0eqnvukajd7"]
+
+[ext_resource type="Script" path="res://Scripts/SelectionScreen.gd" id="1_alhvs"]
+[ext_resource type="PackedScene" uid="uid://cjgxvgtpjs6mo" path="res://ScreenNodes/SectionScreenNodes/block_selector.tscn" id="2_guye0"]
+[ext_resource type="Texture2D" uid="uid://1ftbmw1aaibr" path="res://Media/GWEMLogo.jpg" id="3_ibi42"]
+
+[node name="SelectionScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_alhvs")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+
+[node name="BlockSelector" parent="." instance=ExtResource("2_guye0")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.6
+anchor_right = 0.5
+anchor_bottom = 0.6
+offset_left = -38.0
+offset_right = -38.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="LoadScheduleButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.8
+anchor_right = 0.5
+anchor_bottom = 0.8
+offset_left = -115.0
+offset_top = -31.0
+offset_right = 115.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Load Existing Block Schedule"
+
+[node name="CreateScheduleButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.445313
+anchor_top = 0.899691
+anchor_right = 0.554688
+anchor_bottom = 0.935185
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Generate New Schedule"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.3
+anchor_right = 0.5
+anchor_bottom = 0.3
+offset_left = -180.0
+offset_top = -180.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_ibi42")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="LoadScheduleButton" to="." method="_on_load_schedule_button_pressed"]
+[connection signal="pressed" from="CreateScheduleButton" to="." method="_on_create_schedule_button_pressed"]

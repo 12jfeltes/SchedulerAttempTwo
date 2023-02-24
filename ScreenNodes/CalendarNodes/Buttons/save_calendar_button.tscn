@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0y8yhifk5hwe"]
+
+[ext_resource type="Script" path="res://ScreenNodes/CalendarNodes/Buttons/save_calendar_button.gd" id="1_st1oh"]
+
+[node name="SaveCalendarButton" type="Control"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1_st1oh")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 101.0
+offset_bottom = 31.0
+text = "Save/Export"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

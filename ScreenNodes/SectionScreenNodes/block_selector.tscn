@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjgxvgtpjs6mo"]
+
+[ext_resource type="Script" path="res://ScreenNodes/SectionScreenNodes/block_selector.gd" id="1_n1may"]
+
+[node name="BlockSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_n1may")
+
+[node name="SpinBox" type="SpinBox" parent="."]
+custom_minimum_size = Vector2(100, 0)
+offset_right = 83.0625
+offset_bottom = 31.0
+min_value = 1.0
+max_value = 13.0
+value = 1.0
+update_on_text_changed = true
+prefix = "Block"
+
+[connection signal="value_changed" from="SpinBox" to="." method="_on_spin_box_value_changed"]
